@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Zoho Tasks Report Builder",
+  "description": "Generate Reports from Zoho Tasks by retrieving data from DOM elements",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Zoho Tasks Report Generator"
+  },
+  "permissions": [
+    "https://projects.zoho.com/*"
+  ],
+  "background": {
+      "persistent": false,
+      "scripts": ["background.js"]
+  }
+  // To be used only when script must be automatically included in web page
+  // "content_scripts": [
+  //   {
+  //     "matches": ["https://projects.zoho.com/*"],
+  //     "js": ["jquery-3.2.1.js", "taskBuilder.js"]
+  //   }
+  // ],
+}
