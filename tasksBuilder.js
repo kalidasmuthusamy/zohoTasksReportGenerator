@@ -54,7 +54,7 @@ function buildTaskObjects(){
 
     var taskObj = {name: null, hours: null};
     taskObj.name = processName(taskName, $elem);
-    taskObj.hours = processHours(($elem.children().find(taskSelectors.hours).text()));
+    taskObj.hours = processHours(($elem.children().eq(14).attr('title')));
 
     totalHours += Number.parseFloat(taskObj.hours);
     tasks.push(taskObj);
