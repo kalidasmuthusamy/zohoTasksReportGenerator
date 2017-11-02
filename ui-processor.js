@@ -12,11 +12,11 @@ function applyFilter(){
 }
 
 
-function asyncFuncExecutor(){
+function asyncFuncExecutor(uiActions){
   var item = uiActions.shift();
   if(item !== undefined){
     item.func();
-    setTimeout(asyncFuncExecutor, item.pauseFor);
+    setTimeout(asyncFuncExecutor(uiActions), item.pauseFor);
   }
 }
 
@@ -26,4 +26,4 @@ uiActions.push({ func: selectAllStatus, pauseFor: 2000 });
 uiActions.push({ func: applyFilter, pauseFor: 5000 });
 uiActions.push({ func: buildTaskObjects, pauseFor: 1000 });
 
-asyncFuncExecutor();
+asyncFuncExecutor(uiActions);
